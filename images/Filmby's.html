@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://127.0.0.1:52015/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Arvo Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Filmby&#39;s_files/css2" rel="stylesheet">
+
+    <link rel="stylesheet" href="./Filmby&#39;s_files/main.css">
+    <title>Filmby's</title>
+
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:52015/images/favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://127.0.0.1:52015/images/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://127.0.0.1:52015/images/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="http://127.0.0.1:52015/images/favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="http://127.0.0.1:52015/images/favicon_package_v0.16/safari-pinned-tab.svg" color="#f73e06">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <script defer="" src="./Filmby&#39;s_files/controller.js" type="module"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <img class="home-icon" src="./Filmby&#39;s_files/home-icon.png" alt="Home Icon">
+      <div class="header-flexbox">
+        <img class="slogan-left" src="./Filmby&#39;s_files/left-slogan.png" alt="slogan">
+        <img class="logo" src="./Filmby&#39;s_files/website-logo.png" alt="logo">
+        <img class="slogan-right" src="./Filmby&#39;s_files/right-slogan.png" alt="slogan">
+      </div>
+    </header>
+
+    <div class="page">
+      <div class="search-bar">
+        <h1>Get IMDb, Rotten Tomatoes and Metacritic ratings for any movie!</h1>
+        <div class="search-input-fields">
+          <input class="search-field" type="text" placeholder="Search any movie!">
+          <input class="search-btn" type="submit" value="Search">
+        </div>
+      </div>
+
+      <section class="dynamic-content">
+        <div class="spinner-wrapper hide"></div>
+
+        <div class="error-message-wrapper hide"> </div>
+
+        <div class="user-films-list-wrapper"><div class="user-films-title">
+    <h2>Your Movies</h2>
+  </div><div class="empty-list">
+    <h4>You have no movies saved to your list. Search any movie, give it a rating, and add it to your list now!</h4><h4>
+    </h4></div> </div>
+
+        <div class="search-results-wrapper hide"> </div>
+
+        <div class="single-movie-display-wrapper hide"> </div>
+      </section>
+    </div>
+
+    <div class="modal-window hide">
+      <div class="modal-content">
+        <h1>
+          Add a rating between 0.1 and 10. This movie will be added to your
+          list, which is available on the homepage.
+        </h1>
+        <img src="./Filmby&#39;s_files/user-score-logo.png" alt="User Score Logo">
+        <input class="user-score-input" type="number" min="0.1" max="10" step="0.1">
+        <input class="user-score-submit" type="submit" value="Submit">
+      </div>
+    </div>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+</script>
+
+
+</body></html>

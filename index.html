@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Arvo Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Filmby's</title>
+
+    <!-- Favicons-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon_package_v0.16/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon_package_v0.16/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon_package_v0.16/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="./images/favicon_package_v0.16/site.webmanifest"
+    />
+    <link
+      rel="mask-icon"
+      href="./images/favicon_package_v0.16/safari-pinned-tab.svg"
+      color="#f73e06"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script defer type="module" src="./js/controller.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <img class="home-icon" src="./images/home-icon.png" alt="Home Icon" />
+      <div class="header-flexbox">
+        <img class="slogan-left" src="./images/left-slogan.png" alt="slogan" />
+        <img class="logo" src="./images/website-logo.png" alt="logo" />
+        <img
+          class="slogan-right"
+          src="./images/right-slogan.png"
+          alt="slogan"
+        />
+      </div>
+    </header>
+
+    <div class="page">
+      <div class="search-bar">
+        <h1>Get IMDb, Rotten Tomatoes and Metacritic ratings for any movie!</h1>
+        <div class="search-input-fields">
+          <input
+            class="search-field"
+            type="text"
+            placeholder="Search any movie!"
+          />
+          <input class="search-btn" type="submit" value="Search" />
+        </div>
+      </div>
+
+      <section class="dynamic-content">
+        <div class="spinner-wrapper hide"></div>
+
+        <div class="error-message-wrapper hide"></div>
+
+        <div class="user-films-list-wrapper hide"></div>
+
+        <div class="search-results-wrapper hide"></div>
+
+        <div class="single-movie-display-wrapper hide"></div>
+      </section>
+    </div>
+
+    <div class="modal-window hide">
+      <div class="modal-content">
+        <h1>
+          Add a rating between 0.1 and 10. This movie will be added to your
+          list, which is available on the homepage.
+        </h1>
+        <img src="./images/user-score-logo.png" alt="User Score Logo" />
+        <input
+          class="user-score-input"
+          type="number"
+          min="0.1"
+          max="10"
+          step="0.1"
+        />
+        <img class="user-score-submit" src="./images/submit-score.png" />
+      </div>
+    </div>
+  </body>
+</html>

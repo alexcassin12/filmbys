@@ -1,0 +1,773 @@
+@import "./_var.scss";
+@import "./_breakpoints.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arvo", serif;
+}
+
+body {
+  min-width: 280px;
+}
+
+.hide {
+  display: none !important;
+}
+
+// HEADER RELATED
+.header {
+  display: relative;
+  background: $header-bg;
+  height: 130px;
+
+  @include md {
+    height: 110px;
+  }
+  @include sm {
+    height: 90px;
+  }
+
+  .header-flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    img[class*="slogan"] {
+      width: 200px;
+      height: 60px;
+
+      @include md {
+        width: 140px;
+        height: 42px;
+      }
+      @include sm {
+        display: none;
+      }
+    }
+
+    .logo {
+      display: block;
+      padding-top: 2px;
+      width: 210px;
+      cursor: pointer;
+
+      @include md {
+        width: 180px;
+      }
+      @include sm {
+        width: 150px;
+      }
+    }
+  }
+
+  .home-icon {
+    position: absolute;
+    left: 35px;
+    top: 30px;
+    width: 50px;
+    cursor: pointer;
+
+    @include md {
+      width: 35px;
+    }
+    @include sm {
+      top: 25px;
+    }
+  }
+}
+
+// MAIN PAGE RELATED
+
+//MAIN PAGE HOUSEKEEPING
+.page {
+  background: black url("./../images/transparent-background.png") repeat-y
+    scroll;
+  background-size: 100%;
+  overflow: hidden;
+  position: relative;
+  min-height: calc(100vh - 130px);
+  padding-bottom: 10px;
+
+  //SEARCH BARS
+  .search-bar {
+    position: relative;
+    width: 65%;
+    margin: auto;
+    background-color: $transparent-black-bg;
+    margin-top: 10px;
+    padding: 2.2%;
+    border-radius: $standard-box-border-radius;
+    color: $transparent-white-text;
+
+    @include xs {
+      width: 80%;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 20px;
+
+      @include md {
+        font-size: 1rem;
+      }
+      @include sm {
+        font-size: 0.85rem;
+      }
+      @include xs {
+        font-size: 0.7rem;
+        margin-bottom: 7px;
+      }
+      @include xxs {
+        font-size: 0.47rem;
+      }
+    }
+    .search-input-fields {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .search-field {
+        background-color: lightgrey;
+        height: 30px;
+        width: 65%;
+        display: block;
+        padding: 20px;
+        color: black;
+        font-weight: bold;
+        font-size: 1.5rem;
+        border-radius: 0%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        @include xs {
+          padding: 10px;
+          height: 30px;
+          font-size: 0.8rem;
+        }
+
+        &::placeholder {
+          color: black;
+          font-weight: bold;
+          font-family: "Arvo", serif;
+        }
+      }
+
+      .search-btn {
+        height: 43px;
+        align-self: center;
+        width: 100px;
+        font-family: "Arvo", serif;
+        font-weight: bold;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background-color: lightgrey;
+        border-radius: 0%;
+        border: 1px solid black;
+        color: black;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        @include xs {
+          height: 29px;
+          width: 60px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .dynamic-content {
+    max-width: 2000px;
+    margin: auto;
+
+    .svg-spinner-wrapper {
+      width: 200px;
+      margin: auto;
+      .svg-spinner {
+        width: 100px;
+        display: block;
+        margin: auto;
+
+        @include sm {
+          width: 50px;
+        }
+      }
+    }
+
+    .error-message-wrapper {
+      text-align: center;
+      margin: auto;
+      width: 90%;
+      height: auto;
+      background-color: $transparent-black-bg;
+      margin: 10px auto;
+      padding: 25px 40px;
+      border-radius: $standard-box-border-radius;
+      color: $transparent-white-text;
+
+      @include md {
+        font-size: 0.8rem;
+      }
+      @include sm {
+        font-size: 0.75rem;
+      }
+      @include xs {
+        font-size: 0.7rem;
+        padding: 15px 40px;
+      }
+      @include xxs {
+        font-size: 0.65rem;
+      }
+    }
+    //USER FILMS LIST
+    .user-films-title {
+      position: relative;
+      width: 180px;
+      height: 40px;
+      padding: 5px 0;
+      background-color: $transparent-black-bg;
+      margin: 10px auto;
+      border-radius: $standard-box-border-radius;
+      color: $transparent-white-text;
+      text-align: center;
+
+      @include xs {
+        font-size: 0.5rem;
+        height: 25px;
+      }
+    }
+
+    .empty-list {
+      text-align: center;
+      margin: auto;
+      width: 90%;
+      height: auto;
+      background-color: $transparent-black-bg;
+      margin: 10px auto;
+      padding: 25px 40px;
+      border-radius: $standard-box-border-radius;
+      color: $transparent-white-text;
+
+      @include md {
+        font-size: 0.8rem;
+      }
+      @include sm {
+        font-size: 0.75rem;
+      }
+      @include xs {
+        font-size: 0.7rem;
+        padding: 15px 40px;
+      }
+      @include xxs {
+        font-size: 0.65rem;
+      }
+    }
+
+    .user-films-list-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      width: 90%;
+      height: 200px;
+      background-color: $transparent-black-bg;
+      margin: 0 auto;
+      padding: 15px 18px;
+      border-radius: $standard-box-border-radius;
+      color: $transparent-white-text;
+      cursor: pointer;
+      overflow: hidden;
+
+      @include md {
+        height: 150px;
+      }
+      @include sm {
+        height: 110px;
+      }
+      @include xs {
+        height: 70px;
+        margin: -7px auto;
+        padding: 15px 13px;
+      }
+      @include xxs {
+        height: 50px;
+        margin: -8px auto;
+      }
+
+      &:hover {
+        border: 1px solid lightgrey;
+      }
+
+      .user-film-rank {
+        justify-self: flex-start;
+        margin-left: 15px;
+
+        @include xs {
+          font-size: 0.7rem;
+          margin-left: 7px;
+        }
+      }
+
+      .user-film-title {
+        width: 15%;
+        max-height: 150%;
+        margin: 0 15px;
+
+        @include md {
+          font-size: 0.85rem;
+        }
+        @include sm {
+          font-size: 0.7rem;
+        }
+        @include xs {
+          font-size: 0.5rem;
+        }
+        @include xxs {
+          width: 22%;
+        }
+      }
+
+      .user-film-image {
+        justify-self: flex-start;
+        width: 120px;
+        height: auto;
+
+        @include md {
+          width: 80px;
+        }
+        @include sm {
+          width: 60px;
+        }
+        @include xs {
+          width: 35px;
+        }
+        @include xxs {
+          display: none;
+        }
+      }
+
+      .rating-display {
+        text-align: center;
+
+        @include md {
+          font-size: 0.7rem;
+        }
+        @include sm {
+          font-size: 0.6rem;
+        }
+        @include xs {
+          font-size: 0.4rem;
+        }
+        @include xxs {
+          font-size: 0.3rem;
+        }
+        .ratings-logo {
+          height: 100px;
+          margin-bottom: 10px;
+
+          @include md {
+            height: 70px;
+          }
+          @include sm {
+            height: 50px;
+          }
+          @include xs {
+            height: 30px;
+            margin-bottom: 8px;
+          }
+          @include xxs {
+            height: 16px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+
+      .delete-film {
+        .delete-logo {
+          height: 15px;
+
+          @include md {
+            height: 12px;
+          }
+          @include sm {
+            height: 10px;
+          }
+          @include xs {
+            height: 8px;
+          }
+          @include xxs {
+            height: 6px;
+          }
+        }
+      }
+    }
+
+    // SEARCH RESULT DISPLAY
+    .search-results-wrapper {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      width: 90%;
+      height: auto;
+      background-color: $transparent-black-bg;
+      margin: 10px auto;
+      padding: 15px 40px;
+      border-radius: $standard-box-border-radius;
+      color: $solid-white-text;
+
+      @include xs {
+        gap: 20px;
+      }
+      @include xxs {
+        width: 60%;
+        gap: 8px;
+      }
+
+      .search-result-display {
+        text-align: center;
+        width: 250px;
+        cursor: pointer;
+        border-radius: $standard-box-border-radius;
+        padding: 15px;
+        background-color: rgba(94, 86, 86, 0.7);
+
+        @include md {
+          width: 220px;
+          font-size: 0.85rem;
+        }
+        @include sm {
+          width: 200px;
+          font-size: 0.8rem;
+        }
+        @include xs {
+          width: 180px;
+          font-size: 0.7rem;
+        }
+        @include xxs {
+          width: 160px;
+          font-size: 0.6rem;
+        }
+
+        img {
+          width: 90%;
+          margin-bottom: 10px;
+        }
+      }
+
+      .no-search-results-message {
+        text-align: center;
+        margin: auto;
+        width: 90%;
+        height: auto;
+        background-color: $transparent-black-bg;
+        margin: 10px auto;
+        padding: 5px 20px;
+        border-radius: $standard-box-border-radius;
+        color: $transparent-white-text;
+
+        @include md {
+          font-size: 0.8rem;
+        }
+        @include sm {
+          font-size: 0.75rem;
+        }
+        @include xs {
+          font-size: 0.7rem;
+          padding: 15px 40px;
+        }
+        @include xxs {
+          font-size: 0.65rem;
+        }
+      }
+    }
+
+    // SINGLE MOVIE DISPLAY
+    .single-movie-display {
+      position: relative;
+      width: 90%;
+      height: auto;
+      background-color: $transparent-black-bg;
+      margin: 10px auto;
+      padding: 0 70px 40px 70px;
+      border-radius: $standard-box-border-radius;
+      color: $solid-white-text;
+
+      @include md {
+        padding: 5px 30px;
+      }
+
+      .parent {
+        display: grid;
+        height: auto;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, auto);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        @include md {
+          grid-template-rows: repeat(13, auto);
+        }
+      }
+
+      .movie-heading {
+        grid-area: 1 / 1 / 2 / 9;
+        text-align: center;
+        align-self: center;
+        font-family: "Arvo", serif;
+        text-decoration: underline;
+        padding: 20px 0 40px 0;
+
+        @include md {
+          font-size: 0.8rem;
+        }
+        @include xs {
+          font-size: 0.6rem;
+        }
+      }
+
+      .imdb-logo {
+        grid-area: 2 / 1 / 4 / 3;
+      }
+      .rotten-tomatoes-logo {
+        grid-area: 2 / 3 / 4 / 5;
+
+        img {
+          width: 180px !important;
+          @include sm {
+            width: 140px !important;
+          }
+          @include xs {
+            width: 90px !important;
+          }
+          @include xxs {
+            width: 55px !important;
+          }
+        }
+      }
+      .metacritic-logo {
+        grid-area: 2 / 5 / 4 / 7;
+      }
+      .add-score-logo {
+        grid-area: 2 / 7 / 4 / 9;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: transform 0.15s ease-in-out;
+        }
+      }
+      .user-score-logo {
+        grid-area: 2 / 7 / 4 / 9;
+      }
+
+      .movie-poster {
+        grid-area: 4 / 1 / 9 / 4;
+        margin: 30px auto 0 auto;
+        justify-items: start;
+
+        @include md {
+          grid-area: 4 / 1 / 9 / 9;
+        }
+        img {
+          width: 300px;
+          max-height: 700px;
+
+          @include md {
+            width: 100%;
+            max-height: auto;
+          }
+        }
+      }
+
+      .movie-info {
+        grid-area: 4 / 4 / 9 / 9;
+        text-align: center;
+        margin: 30px 12% 0 0;
+        height: auto;
+        // border: 2px solid rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+        padding: 20px 10px;
+
+        @include md {
+          grid-area: 9 / 1 / 12 / 12;
+          margin: 8px auto;
+          border: 2px solid rgba(150, 150, 150, 0.6);
+        }
+
+        h4 {
+          font-weight: bolder;
+          @include xs {
+            font-size: 0.8rem;
+          }
+        }
+
+        p {
+          font-size: 0.9rem;
+          @include xs {
+            font-size: 0.7rem;
+          }
+        }
+      }
+
+      div[class*="logo"] {
+        margin: auto;
+        align-items: start;
+
+        @include md {
+          margin-top: -10px;
+        }
+
+        img {
+          width: 130px;
+          padding-bottom: 10px;
+
+          @include sm {
+            width: 100px;
+          }
+          @include xs {
+            width: 65px;
+          }
+          @include xxs {
+            width: 40px;
+          }
+        }
+
+        h4 {
+          font-size: 1.5rem;
+          text-align: center;
+
+          @include md {
+            font-size: 1.3rem;
+          }
+          @include sm {
+            font-size: 1.1rem;
+          }
+          @include xs {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-window {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 200px;
+  overflow: auto;
+  background-color: rgba(150, 150, 150, 0.6);
+
+  .modal-content {
+    background-color: $transparent-black-bg;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    border: 2px solid $site-red-color;
+    border-radius: $standard-box-border-radius;
+    color: $solid-white-text;
+    text-align: center;
+
+    @include lg {
+      width: 800px;
+    }
+    @include md {
+      width: 600px;
+      padding: 15px;
+    }
+    @include sm {
+      width: 400px;
+    }
+    @include xs {
+      width: 300px;
+    }
+    @include xxs {
+      width: 200px;
+    }
+
+    h1 {
+      width: 90%;
+      margin: auto;
+      font-size: 1.3rem;
+
+      @include sm {
+        font-size: 1rem;
+      }
+      @include xs {
+        font-size: 0.8rem;
+      }
+      @include xxs {
+        font-size: 0.6rem;
+      }
+    }
+
+    img {
+      display: block;
+      width: 200px;
+      margin: 25px auto 25px auto;
+
+      @include md {
+        width: 150px;
+      }
+      @include xs {
+        width: 120px;
+        margin: 12px auto 5px auto;
+      }
+    }
+
+    input[type="number"] {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 25px auto;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      background-color: lightgrey;
+
+      @include xs {
+        width: 80px;
+        height: 80px;
+        font-size: 1.6rem;
+        margin: 0 auto 5px auto;
+      }
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+    }
+
+    .user-score-submit {
+      width: 120px;
+      border-radius: 60px;
+      box-shadow: 0 4.5px 2px rgb(100, 100, 100);
+      cursor: pointer;
+
+      @include md {
+        width: 100px;
+      }
+      @include sm {
+        width: 90px;
+      }
+      @include xs {
+        width: 70px;
+      }
+    }
+  }
+}
